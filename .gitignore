@@ -1,0 +1,38 @@
+# Fichiers Java/Maven
+*.class
+target/
+dependency-reduced-pom.xml
+.mvn/
+
+# Fichiers Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+
+# Fichiers générés/temporaires
+data/export/*.csv
+data/visualizations/*.png
+tests/results/*.txt
+*.log
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Fichiers IDE/éditeurs
+.idea/
+.vscode/
+.eclipse/
+*.iml
+*.ipr
+*.iws
+
+# Fichiers système
+.git/
+
+# Dataset volumineux (téléchargeable depuis UCI)
+household_power_consumption.txt
+

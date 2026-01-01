@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!--
+Configuration YARN pour le projet d'analyse de consommation électrique
+Hadoop 3.3.6
+
+Cette configuration optimise YARN pour l'exécution des jobs MapReduce
+du projet avec allocation de ressources appropriée.
+-->
+<configuration>
+    <!-- Configuration du Resource Manager -->
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>localhost</value>
+        <description>Hostname du ResourceManager</description>
+    </property>
+    
+    <!-- Configuration des ressources du NodeManager -->
+    <property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>4096</value>
+        <description>Mémoire totale disponible pour les containers (MB)</description>
+    </property>
+    
+    <property>
+        <name>yarn.nodemanager.resource.cpu-vcores</name>
+        <value>4</value>
+        <description>Nombre de CPU vcores disponibles</description>
+    </property>
+    
+    <!-- Allocation maximale par container -->
+    <property>
+        <name>yarn.scheduler.maximum-allocation-mb</name>
+        <value>2048</value>
+        <description>Mémoire maximale allouable à un container (MB)</description>
+    </property>
+    
+    <property>
+        <name>yarn.scheduler.maximum-allocation-vcores</name>
+        <value>4</value>
+        <description>Nombre maximum de vcores par container</description>
+    </property>
+    
+    <!-- Allocation minimale par container -->
+    <property>
+        <name>yarn.scheduler.minimum-allocation-mb</name>
+        <value>256</value>
+        <description>Mémoire minimale allouable à un container (MB)</description>
+    </property>
+    
+    <property>
+        <name>yarn.scheduler.minimum-allocation-vcores</name>
+        <value>1</value>
+        <description>Nombre minimum de vcores par container</description>
+    </property>
+    
+    <!-- Type de scheduler (FIFO par défaut, ou Fair/Capacity) -->
+    <property>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+        <description>Classe du scheduler YARN</description>
+    </property>
+    
+    <!-- Web UI du ResourceManager -->
+    <property>
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>0.0.0.0:8088</value>
+        <description>Adresse de l'interface web du ResourceManager</description>
+    </property>
+    
+    <!-- Activation de la compression des sorties intermédiaires -->
+    <property>
+        <name>mapreduce.map.output.compress</name>
+        <value>true</value>
+        <description>Compression des sorties du mapper</description>
+    </property>
+    
+    <property>
+        <name>mapreduce.map.output.compress.codec</name>
+        <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+        <description>Codec de compression pour les sorties mapper</description>
+    </property>
+    
+    <!-- Configuration de l'Application Master -->
+    <property>
+        <name>yarn.app.mapreduce.am.resource.mb</name>
+        <value>1024</value>
+        <description>Mémoire pour l'Application Master MapReduce (MB)</description>
+    </property>
+    
+    <property>
+        <name>yarn.app.mapreduce.am.command-opts</name>
+        <value>-Xmx819m</value>
+        <description>Options JVM pour l'Application Master</description>
+    </property>
+    
+    <!-- Historique des applications -->
+    <property>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+        <description>Activation de l'agrégation des logs</description>
+    </property>
+    
+    <property>
+        <name>yarn.log.server.url</name>
+        <value>http://localhost:19888/jobhistory/logs</value>
+        <description>URL du serveur de logs</description>
+    </property>
+    
+</configuration>
+
