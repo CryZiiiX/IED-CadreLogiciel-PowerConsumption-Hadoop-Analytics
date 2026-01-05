@@ -191,7 +191,7 @@ hdfs dfs -put household_power_consumption.txt /user/projet/data/raw/
 
 ```bash
 cd scripts/execution
-./run_mapreduce_jobs.sh ../../mapreduce/target/mapreduce-consumption-1.0.jar
+./run_mapreduce_jobs.sh ../../mapreduce/target/mapreduce-consumption-1.0.jar /user/projet/data/raw /user/projet/output
 ```
 
 ### 5. Configuration Hive
