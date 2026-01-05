@@ -1,5 +1,5 @@
 # PowerConsumption-Hadoop-Analytics
-
+![Présentation du projet](Page_de_présentation_de_projet.png)
 ## Résumé
 
 Ce projet d'analyse Big Data traite un dataset de consommation électrique de plus de 2 millions de mesures (période 2006-2010, source UCI Machine Learning Repository) en utilisant l'écosystème Hadoop. L'objectif est d'identifier des patterns temporels de consommation (heures de pointe, évolution mensuelle, différences semaine/week-end) à travers un pipeline complet allant du stockage distribué HDFS aux analyses SQL avec Hive, en passant par le traitement distribué MapReduce. Les résultats sont ensuite visualisés via des scripts Python pour produire des insights exploitables.
